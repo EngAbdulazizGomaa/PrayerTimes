@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>مواقيت الصلاة</title>
+    <!-- Css File -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- axios Lib -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./node_modules/axios/dist/axios.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Start Timng -->
+      <div class="time">
+        <div class="current-time">
+          <h2>الوقت الحالي</h2>
+          <p>08:04:20</p>
+        </div>
+        <!-- Start Chhoses -->
+        <div class="chooses">
+          <!-- Start Choosing Country -->
+          <div class="choose-country">
+            <label for="country">اختار الدولة</label>
+            <select name="countries" id="country">
+              <option style="display: none">اختر الدولة</option>
+            </select>
+          </div>
+          <!-- End Choosing Country -->
+          <!-- Start Choosing Cites -->
+          <div class="choose-cities">
+            <label for="city">اختار المدينة</label>
+            <select name="cities" id="city">
+              <option style="display: none">اختر المدينة</option>
+              <!-- <option value="">القاهره</option>
+              <option value="">الجيزه</option>
+              <option value="">الشرقية</option>
+              <option value="">الاسكندرية</option>
+              <option value="">المنوفيه</option> -->
+            </select>
+          </div>
+          <!-- End Choosing Cites -->
+        </div>
+      </div>
+      <!-- End Timng -->
+      <div class="prayer-time">
+        <div class="prayer">
+          <h3>الفجر</h3>
+          <p></p>
+        </div>
+        <div class="prayer">
+          <h3>الشروق</h3>
+          <p></p>
+        </div>
+        <div class="prayer">
+          <h3>الظهر</h3>
+          <p></p>
+        </div>
+        <div class="prayer">
+          <h3>العصر</h3>
+          <p></p>
+        </div>
+        <div class="prayer">
+          <h3>المغرب</h3>
+          <p></p>
+        </div>
+        <div class="prayer">
+          <h3>العشاء</h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>
+        جميع الحقوق محفوظة لسنة <span>2024</span> | تم التنفيذ بواسة<a href="#"
+          >المنهدس عبدالعزيز جمعه</a
+        >
+      </p>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

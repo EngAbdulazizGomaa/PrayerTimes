@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Tajawal", serif;
+}
+body {
+  direction: rtl;
+  background-color: #253d5b;
+}
+.container {
+  width: 50%;
+  margin: auto;
+  /* text-align: center; */
+}
+.container .time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+.container .time .current-time {
+  padding: 10px 50px;
+  border: 1px solid #dfdede;
+  border-radius: 10px;
+  margin: 15px;
+  text-align: center;
+  position: relative;
+  right: 50px;
+}
+.container .time .current-time h2 {
+  /* display: inline-block; */
+  margin-bottom: 20px;
+  color: #969696;
+}
+.container .time .current-time p {
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #dfdede;
+  border-radius: 4px;
+  padding: 0 8px;
+}
+/* Start Choose */
+.container .time .chooses {
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عمودياً */
+  gap: 40px; /* مسافة بين القوائم */
+  align-items: flex-end; /* محاذاة إلى اليسار */
+  margin: 20px; /* مسافة خارجية حول الحاوية */
+}
+
+.container .time .choose-cities select,
+.container .time .choose-country select {
+  width: 400px; /* ضبط العرض */
+  padding: 7px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+.container .time .choose-cities label {
+  margin-left: 12px;
+  font-size: 20px;
+  /* color: #67697c; */
+  font-weight: bold;
+}
+.container .time .choose-country label {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+/* End Choose */
+/* Start Prayer Time */
+.container .prayer-time {
+  text-align: center;
+  width: 75%;
+  margin: 20px auto;
+  position: relative;
+  right: 20px;
+}
+.container .prayer-time .prayer {
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background-color: rgb(224, 224, 224);
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  padding: 8px;
+  align-items: center;
+  opacity: 0; /* العناصر تكون مخفية عند بداية الأنيميشن */
+  transform: translateX(100%); /* جعل العناصر تبدأ من جهة اليمين */
+  transition: transform 1s ease, opacity 1s ease; /* الانتقال الذي سيتم تطبيقه عند تفعيل الأنيميشن */
+}
+
+.prayer.show {
+  animation: slideIn 1s forwards;
+}
+.container .prayer-time .prayer:nth-child(1) {
+  animation-delay: 0s;
+}
+.container .prayer-time .prayer:nth-child(2) {
+  animation-delay: 1s;
+}
+.container .prayer-time .prayer:nth-child(3) {
+  animation-delay: 2s;
+}
+.container .prayer-time .prayer:nth-child(4) {
+  animation-delay: 3s;
+}
+.container .prayer-time .prayer:nth-child(5) {
+  animation-delay: 4s;
+}
+.container .prayer-time .prayer:nth-child(6) {
+  animation-delay: 5s;
+}
+.container .prayer-time .prayer h3 {
+  background-color: blueviolet;
+  width: 100px;
+  border-radius: 6px;
+}
+.container .prayer-time .prayer p {
+  font-size: 16px;
+  font-weight: bold;
+  background-color: brown;
+  border-radius: 6px;
+  padding: 2px;
+  width: 100px;
+  color: white;
+}
+/* End Prayer Time */
+/* Start Footer */
+.footer {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 18px;
+  border-top: 1px solid white;
+  padding-top: 20px;
+}
+.footer a {
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Start Animation */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(
+      100%
+    ); /* بداية الأنيميشن: العنصر خارج الشاشة من جهة اليمين */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(
+      0
+    ); /* نهاية الأنيميشن: العنصر يظهر في مكانه الطبيعي */
+  }
+}
+@media (max-width: 430px) {
+  .container .time .choose-cities select,
+  .container .time .choose-country select {
+    width: 300px;
+    margin-top: 10px;
+  }
+  .container .time .current-time {
+    right: 10px;
+  }
+  .container .prayer-time {
+    width: 100%;
+    right: 0;
+  }
+  .container .prayer-time .prayer {
+    width: 300px;
+    position: relative;
+    right: -50px;
+  }
+}
